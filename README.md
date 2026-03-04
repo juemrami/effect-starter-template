@@ -6,15 +6,25 @@ This repository is a starter template for an Effect-TS-based project.
 
 It intentionally provides only a small set of opinionated defaults:
 
-- Linting and formatting is configured with ESLint based on Effect-recommended guidance.
+- Linting and formatting are configured with `oxlint` + `dprint`.
 - Recommended extensions and extension configurations for VS Code are included in `.vscode/extensions.json` and `.vscode/settings.json` respectively.
 
 ## VS Code
 
-### Note on formatting with Eslint
+### Note on formatting with `dprint`
 
-The `dbaeumer.vscode-eslint` extension does not provide a vscode formatter for the "Format Document" or "Format Selection" features.
-Instead it relies on the `editor.codeActionsOnSave` setting to trigger formatting on save via the `@effect/eslint-plugin`.
+This template's `dprint.path` setting is configured to point to the binary in `./node_modules/.bin`; however, you may need to adjust the setting string's path separators depending on your OS.
+
+Alternatively, you can install `dprint` globally and remove the `dprint.path` setting all together. The `dprint.dprint` extension will use whatever binary your PATH resolves to.
+
+### Note on the oxlint-effect plugin
+
+This plugin is maintained as [`@effect/oxc` inside the Effect v4 development
+monorepo](https://github.com/Effect-TS/effect-smol/tree/main/packages/tools/oxc), __but__ it is currently marked [private](https://github.com/Effect-TS/effect-smol/blob/main/packages/tools/oxc/package.json#L5) and therefore __not published to npm__.
+
+It is included locally at `./oxlint/effect` until there is an official release.
+
+I recommend moving to the `@effect` vendored version whenever it becomes available.
 
 ### Note on TypeScript SDK + Effect LSP
 

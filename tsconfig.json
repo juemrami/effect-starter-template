@@ -10,7 +10,7 @@
     // ],
     "strictNullChecks": true,
     "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
-     // Use incremental builds with project references.
+    // Use incremental builds with project references.
     "incremental": true,
     "composite": true,
     // Target modern JavaScript (ES2022+) whilst staying closely compatible with the Node.js module system.
@@ -34,12 +34,17 @@
     // Miscellaneoaus
     "skipLibCheck": true, // Skip type checking of third party libraries.
     "noErrorTruncation": true, // Do not truncate error messages.
-    "types": [], // Disable automatic loading of `@types/*` packages.
+    "types": [
+      "node"
+    ], // Disable automatic loading of `@types/*` packages. (for monorepos)
     "plugins": [
       {
         "name": "@effect/language-service",
         "transform": "@effect/language-service/transform",
-        "namespaceImportPackages": ["effect", "@effect/*"]
+        "namespaceImportPackages": [
+          "effect",
+          "@effect/*"
+        ]
       }
     ]
   },

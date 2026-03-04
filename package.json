@@ -4,23 +4,24 @@
     "type": "module",
     "scripts": {
         "dev": "node --watch src/main.ts",
-        "lint": "eslint \"**/{src,test}/**/*.{ts,mjs}\"",
-        "lint-fix": "pnpm lint --fix"
+        "lint": "oxlint && dprint check",
+        "lint-fix": "oxlint --fix && dprint fmt"
     },
     "devDependencies": {
-        "@effect/eslint-plugin": "^0.3.2",
         "@effect/language-service": "^0.40.1",
-        "@eslint/js": "^9.39.3",
+        "@oxlint/plugins": "^1.51.0",
+        "@types/node": "^25.3.3",
+        "dprint": "^0.52.0",
         "effect": "^3.19.19",
-        "eslint": "^9.39.3",
-        "eslint-import-resolver-typescript": "^4.4.4",
-        "eslint-plugin-import-x": "^4.16.1",
-        "typescript": "^5.9.3",
-        "typescript-eslint": "^8.56.1"
+        "oxlint": "^1.51.0",
+        "typescript": "^5.9.3"
     },
     "pnpm": {
         "ignoredBuiltDependencies": [
             "unrs-resolver"
+        ],
+        "onlyBuiltDependencies": [
+            "dprint"
         ]
     }
 }

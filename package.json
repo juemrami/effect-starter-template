@@ -2,6 +2,11 @@
     "$schema": "https://json.schemastore.org/package.json",
     "name": "placeholder",
     "type": "module",
+    "scripts": {
+        "dev": "node --watch src/main.ts",
+        "lint": "eslint \"**/{src,test}/**/*.{ts,mjs}\"",
+        "lint-fix": "pnpm lint --fix"
+    },
     "devDependencies": {
         "@effect/eslint-plugin": "^0.3.2",
         "@effect/language-service": "^0.40.1",

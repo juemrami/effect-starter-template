@@ -1,6 +1,6 @@
 import { Console, Effect } from "effect"
 
-Effect.runPromise(
+await Effect.runPromise(
 	Console.log(
 		"Hello, World!"
 	)
